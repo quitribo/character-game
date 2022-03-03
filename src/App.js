@@ -43,13 +43,13 @@ function App() {
   const [hatpart, setHatPart] = useState(Object.values(hats["pics"])[0]);
   const [glasspart, setGlassPart] = useState(Object.values(glasses["pics"])[0]);
   const [clothing1part, setClothing1Part] = useState(
-    Object.values(clothing1)[0]
+    Object.values(clothing1["pics"])[0]
   );
   const [clothing2part, setClothing2Part] = useState(
-    Object.values(clothing2)[0]
+    Object.values(clothing2["pics"])[0]
   );
   const [clothing3part, setClothing3Part] = useState(
-    Object.values(clothing3)[0]
+    Object.values(clothing3["pics"])[0]
   );
 
   // Redefine state of bodypart, can not modify
@@ -111,9 +111,15 @@ function App() {
     setEyeBrowPart(Object.values(eyebrows["pics"])[randomFunc(total.eyebrows)]);
     setHatPart(Object.values(hats["pics"])[randomFunc(total.hat)]);
     setGlassPart(Object.values(glasses["pics"])[randomFunc(total.glasses)]);
-    setClothing1Part(Object.values(clothing1)[randomFunc(total.clothing1)]);
-    setClothing2Part(Object.values(clothing2)[randomFunc(total.clothing2)]);
-    setClothing3Part(Object.values(clothing3)[randomFunc(total.clothing3)]);
+    setClothing1Part(
+      Object.values(clothing1["pics"])[randomFunc(total.clothing1)]
+    );
+    setClothing2Part(
+      Object.values(clothing2["pics"])[randomFunc(total.clothing2)]
+    );
+    setClothing3Part(
+      Object.values(clothing3["pics"])[randomFunc(total.clothing3)]
+    );
   };
 
   return (
