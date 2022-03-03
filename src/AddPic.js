@@ -7,7 +7,7 @@ function AddPic({ part, handleClick }) {
   // console.log(part);
 
   const objVal = Object.values(part["pics"]);
-  console.log(Object.values(objVal));
+  // console.log(Object.values(objVal));
 
   return (
     <div className="list-section" style={{ position: "relative" }}>

@@ -18,6 +18,19 @@ const {
   clothing3,
 } = importPic;
 
+const total = {
+  body: 17,
+  eyes: 17,
+  hair: 73,
+  mouths: 24,
+  eyebrows: 15,
+  hat: 28,
+  glasses: 17,
+  clothing1: 5,
+  clothing2: 5,
+  clothing3: 9,
+};
+
 function App() {
   const [bodypart, setBodyPart] = useState(Object.values(body["pics"])[0]);
   const [eyepart, setEyePart] = useState(Object.values(eyes["pics"])[0]);
@@ -84,6 +97,23 @@ function App() {
 
   const handleClickClothing3 = (p) => {
     setClothing3Part(p);
+  };
+
+  const randomFunc = (num) => {
+    return Math.floor(Math.random() * num);
+  };
+
+  const randomButton = () => {
+    setBodyPart(Object.values(body["pics"])[randomFunc(total.body)]);
+    setEyePart(Object.values(eyes["pics"])[randomFunc(total.eyes)]);
+    setHairPart(Object.values(hair["pics"])[randomFunc(total.hair)]);
+    setMouthPart(Object.values(mouths["pics"])[randomFunc(total.mouths)]);
+    setEyeBrowPart(Object.values(eyebrows["pics"])[randomFunc(total.eyebrows)]);
+    setHatPart(Object.values(hats["pics"])[randomFunc(total.hat)]);
+    setGlassPart(Object.values(glasses["pics"])[randomFunc(total.glasses)]);
+    setClothing1Part(Object.values(clothing1)[randomFunc(total.clothing1)]);
+    setClothing2Part(Object.values(clothing2)[randomFunc(total.clothing2)]);
+    setClothing3Part(Object.values(clothing3)[randomFunc(total.clothing3)]);
   };
 
   return (
@@ -166,7 +196,9 @@ function App() {
           </div>
 
           <div className="text-center" style={{ position: "relative" }}>
-            <button className="button">Randomize!</button>
+            <button className="button" onClick={randomButton}>
+              Randomize!
+            </button>
           </div>
         </div>
 
